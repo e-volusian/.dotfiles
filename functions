@@ -1,0 +1,35 @@
+# ======================================================================| FUNCTIONS
+
+function my_function_here {
+  echo hello
+}
+  
+
+function uniping {
+  # 1 packets transmitted, 1 received, 0% packet loss
+  PINGRESULT=$(ping -c 1 $1 | egrep -io " .{1,3}% packet loss")
+  echo $1 -- $PINGRESULT
+}
+alias 1ping=uniping
+
+function nslookup {
+  echo $(dig +short "$1")
+}
+
+function command_exists () { type "$1" &> /dev/null ; }
+
+function randpw {
+  # With only shell-safe special characters and no ambiguous
+  # Alternative: dd if=/dev/urandom bs=11 count=1 status=none | base64
+  PWLENGTHSB=25
+  HOWMANYPWS=${1-1}
+  for _ in $(seq "$HOWMANYPWS");
+  do
+    ESCSYMBOL="\-\-\-\-\+\+\+\+\=\=\=\="
+    AOKSYMBOL="@@@###%%%_,_,_,...^^^///"
+    GOODCHARS="A-HJ-KMNP-Za-hj-kmnp-z1-9"
+    ISALLGOOD="$ESCSYMBOL$AOKSYMBOL$GOODCHARS"
+    dd if=/dev/urandom bs=999 count=1 status=none |\
+      tr -dc "$ISALLGOOD" | cut -c1-$PWLENGTHSB
+  done
+}

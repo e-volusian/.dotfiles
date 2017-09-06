@@ -85,6 +85,9 @@ fi
 # Load aliases
 if [ -f ~/.alias ]; then . ~/.alias ; fi
 
+# Load fucntions
+if [ -f ~/.functions ]; then . ~/.functions ; fi
+
 # Load global environment
 if [ -f /etc/environment ]; then . /etc/environment ; fi
 
