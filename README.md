@@ -10,6 +10,7 @@ it's my dotfiles
 |tmux.conf          |✔           |
 |vimrc              |✔           |
 |alias              |✔           |
+|functions          |✔           |
 |inputrc            |✔           |
 |spectrwm.conf      |✔           |
 |openbox_rc.xml     |✔           |
