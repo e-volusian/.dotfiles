@@ -1,0 +1,42 @@
+# https://www.gnu.org/software/screen/manual/screen.html
+
+# generic options
+shell bash                      # Tell screen your default shell
+startup_message off             # Turn off start message
+defscrollback = 9876            # Lots more scrollback lines
+msgwait 3                       # Set messages timeout to n seconds
+vbell off                       # Get rid of that dumb "wuff wuff" message
+autodetach on                   # automatically detach on hangup
+
+# key bindings
+# https://www.gnu.org/software/screen/manual/html_node/Default-Key-Bindings.html
+bindkey | split -v
+bindkey = split -h
+
+# custom status line variables
+# https://www.gnu.org/software/screen/manual/html_node/Backtick.html
+# backtick  x  y  z  command
+#           │  │  │     └─── command to run
+#           │  │  └───────── autorefresh - after this many seconds
+#           │  └──────────── lifespan - seconds of validity
+#           └─────────────── ID - can be referenced in hardstatus as %x`
+backtick 001 999 999 whoami # system username will be available as %001` 
+
+# status line
+# https://www.gnu.org/software/screen/manual/html_node/String-Escapes.html
+#
+hardstatus alwayslastline "%{=b} %{G}%001`@%H %{W}>  %{C}%-w%{= Bk}%n*%t%{-}%+w %=%{W}<  %{G}%m/%d %c "
+# 
+#                                 bright     undo last
+#                                 blue bg,    format
+#          username        cyan   black fg       │  ┌ windows after current
+#            ┌──┴┐          ┌─┴┐   ┌──┴──┐     ┌─┴┐┌┴┐  ┌ pad/center
+# "%{=b}%{G}%001`@%H %{W}>  %{C}%-w%{= Bk}%n*%t%{-}%+w %=%{W}<  %{G}%m/%d %c"
+#  └─┬─┘└┬─┘      └┬┘└─┬┘       └┬┘  └ ctr │  │          └─┬┘   └─┬┘ │  │  └ 24 hour time HH:MM
+#  bold  green   host  │    windows up     │  │         white     │  │  └ day
+#                    white  to current     │  └ win title         │  └ month
+#                                          └ win number           └ bright green
+
+# this line enables "dynamic window titles"
+# (with the corresponding entry in .bashrc)
+# shelltitle '$ |bash'
