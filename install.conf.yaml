@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.bashrc: bashrc
+    ~/.screenrc: screenrc
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/.alias: alias
+    ~/.inputrc: inputrc
+    ~/.spectrwm.conf: spectrwm.conf
+    ~/.config/openbox/rc.xml: openbox_rc.xml
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
