@@ -5,6 +5,7 @@ it's my dotfiles
 if [ -f /usr/bin/git ] && [ ! -d ~/.dotfiles ] ; then git clone https://github.com/e-volusian/.dotfiles $HOME/.dotfiles && /bin/bash $HOME/.dotfiles/install ; fi
 
 <br>
+
 | file              | ready?     |
 |-------------------|:----------:|
 |bashrc             |✔           |
