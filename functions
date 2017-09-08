@@ -3,7 +3,6 @@
 function my_function_here {
   echo hello
 }
-  
 
 function uniping {
   # 1 packets transmitted, 1 received, 0% packet loss

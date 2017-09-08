@@ -13,6 +13,7 @@ alias  grep=' grep --color=always'
 alias fgrep='fgrep --color=always'
 alias egrep='egrep --color=always'
 alias igrep=' grep --color=always -i'
+alias decomment='clear; egrep -v "^#"'
 
 # ======================================================================| HISTORY
 
@@ -50,7 +51,8 @@ alias scmi='./configure && make && sudo make install'
 
 # ======================================================================| MISC
 
-alias less='less -R'
+alias locate='locate --limit 10'
+alias less='less -SR'
 alias diskspace='du -S | sort -n -r | less'
 alias crontab='EDITOR=/usr/bin/vim crontab'
 alias path='echo; echo $PATH | sed "s/:/\n/g" | pr -T -w $COLUMNS --columns 2'
