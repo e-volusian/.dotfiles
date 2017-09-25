@@ -10,8 +10,6 @@ autodetach on                   # automatically detach on hangup
 
 # key bindings
 # https://www.gnu.org/software/screen/manual/html_node/Default-Key-Bindings.html
-bindkey | split -v
-bindkey = split -h
 
 # custom status line variables
 # https://www.gnu.org/software/screen/manual/html_node/Backtick.html

@@ -32,3 +32,17 @@ function randpw {
       tr -dc "$ISALLGOOD" | cut -c1-$PWLENGTHSB
   done
 }
+
+function bak {
+  NEWNAME="$1_$(date '+%Y-%m-%d-%H-%M-%S').bak"
+  cp "$1" "$NEWNAME"
+  echo Your file "$1" has been backed up to "$NEWNAME"
+}
+
+function dg {
+  DGTYPES="NS|TXT|\sA\s"
+  echo -e ========== Only showing record types: $DGTYPES ==========
+  for s in ' ' www. mail. smtp. pop. imap. blog. en. ftp. ssh. login. ; do
+    dig +noall +answer $s$1 any | grep "$1" | egrep "$DGTYPES" | egrep --color "$s|"
+  done
+}

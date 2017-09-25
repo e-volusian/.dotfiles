@@ -7,6 +7,10 @@ alias lh='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" -hlt1 | head 2> /dev/null'
 alias la='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" -A 2> /dev/null'
 alias  l='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" -CF 2> /dev/null'
 
+# ======================================================================| GIT
+
+alias gc='git clone'
+
 # ======================================================================| GREP
 
 alias  grep=' grep --color=always'
