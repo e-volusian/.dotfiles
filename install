@@ -12,3 +12,6 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+curl -sL https://github.com/shyiko/commacd/raw/v0.4.0/commacd.bash -o ~/.commacd.bash && \
+  echo "source ~/.commacd.bash" >> ~/.bashrc
