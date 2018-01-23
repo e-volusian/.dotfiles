@@ -41,6 +41,7 @@ fi
 
 # ======================================================================| PROMPT
 
+if [ $UID -eq 0 ] ; then PS1INDICATOR="#" ; else PS1INDICATOR="$" ; fi
 if [ "$COLORIZE" = yes ]; then
   BLACK="\[$(tput setaf 0)\]"
   REDDD="\[$(tput setaf 1)\]"
@@ -54,10 +55,11 @@ if [ "$COLORIZE" = yes ]; then
   PTIME="${CYANN}\t${RESET}"
   PHOST="${GREEN}\h${RESET}"
   PSDIR="${YELLO}\w${RESET}"
-  export PS1="$PTIME $PHOST:$PSDIR $ "
+  PS1="$PTIME $PHOST:$PSDIR"
 else
-  PS1="\t \h:\w $ "
+  PS1="\t \h:\w"
 fi
+PS1="$PS1 $PS1INDICATOR "
 
 # ======================================================================| MISC
 
