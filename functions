@@ -46,3 +46,10 @@ function dg {
     dig +noall +answer $s$1 any | grep "$1" | egrep "$DGTYPES" | egrep --color "$s|"
   done
 }
+
+function gcmp() {
+    git add "$1"
+        git commit -m "$2"
+        git push --all
+}
+
