@@ -61,4 +61,4 @@ alias diskspace='du -S | sort -n -r | less'
 alias crontab='EDITOR=/usr/bin/vim crontab'
 alias path='echo; echo $PATH | sed "s/:/\n/g" | pr -T -w $COLUMNS --columns 2'
 alias g='BROWSER=w3m googler --noua --count=3'
-
+alias dt='date +%Y-%m-%d-%H-%M-%S'
