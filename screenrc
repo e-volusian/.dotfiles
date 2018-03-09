@@ -23,7 +23,9 @@ backtick 001 999 999 whoami # system username will be available as %001`
 # status line
 # https://www.gnu.org/software/screen/manual/html_node/String-Escapes.html
 #
-hardstatus alwayslastline "%{=b} %{G}%001`@%H %{W}>  %{C}%-w%{= Bk}%n*%t%{-}%+w %=%{W}<  %{G}%m/%d %c "
+# hardstatus alwayslastline "%{=b} %{G}%001`@%H %{W}>  %{C}%-w%{= Bk}%n*%t%{-}%+w %=%{W}<  %{G}%m/%d %c "
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c%{g}]'
+#
 # 
 #                                 bright     undo last
 #                                 blue bg,    format
