@@ -1,11 +1,12 @@
 # ======================================================================| LS
-# regex to ignore stupid win files I don't wanna look at
+# glob to ignore stupid win files I don't wanna look at
+WIN_IGNORE_DIRS="-I '[Nn][Tt]*.[Dd][Aa][Tt]*' -I 'eula*.txt' -I 'install*dll'"
 
-alias ls='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" --color --group-directories-first 2> /dev/null'
-alias ll='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" --color --group-directories-first -halF 2> /dev/null'
-alias lh='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" -hlt1 | head 2> /dev/null'
-alias la='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" -A 2> /dev/null'
-alias  l='ls -FI "[Nn][Tt]*.[Dd][Aa][Tt]*" -CF 2> /dev/null'
+alias ls='ls -F ${WIN_IGNORE_DIRS} --color --group-directories-first'
+alias ll='ls -F ${WIN_IGNORE_DIRS} --color --group-directories-first -halF'
+alias lh='ls -F ${WIN_IGNORE_DIRS} -hlt1 | head'
+alias la='ls -F ${WIN_IGNORE_DIRS} -A'
+alias  l='ls -F ${WIN_IGNORE_DIRS} -CF'
 
 # ======================================================================| GIT
 
