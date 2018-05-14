@@ -140,5 +140,4 @@ if type -t rbenv > /dev/null ; then eval "$(rbenv init -)" ; fi
 if [ -f ~/.commacd.bash  ]; then . ~/.commacd.bash  ; fi
 if command_exists sshrc ; then alias ssh=sshrc ; fi
 
-source ~/.commacd.bash
 cd $HOME
