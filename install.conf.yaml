@@ -14,6 +14,7 @@
     ~/.spectrwm.conf: spectrwm.conf
     ~/.config/openbox/rc.xml: openbox_rc.xml
     ~/.functions: functions
+    ~/.local/share/kak/kakrc: kakrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
