@@ -4,7 +4,7 @@ it's my dotfiles
 ```bash
 if [ -f /usr/bin/git ] && [ ! -d ~/.dotfiles ]; then
   mv $HOME/.bashrc $HOME/.bashrc~
-  git clone https://github.com/e-volusian/.dotfiles $HOME/.dotfiles
+  git clone https://github.com/e-volusian/dotfiles $HOME/.dotfiles
   /bin/bash $HOME/.dotfiles/install
 fi
 ```
