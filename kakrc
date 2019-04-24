@@ -49,3 +49,5 @@ evaluate-commands %sh{
         echo "source '${kak_config}/kakrc'"
     fi
 }
+
+add-highlighter global/ number-lines
